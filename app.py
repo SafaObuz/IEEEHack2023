@@ -1,35 +1,48 @@
-import os
-
 import openai
 from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "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"
 
-
-@app.route("/", methods=("GET", "POST"))
+@app.route("/")
 def index():
-    if request.method == "POST":
-        animal = request.form["animal"]
+    output = ""
+    return render_template("index.html", output=output)
+
+@app.route("/thisIsTheNameOfRedirect", methods=("GET", "POST"))
+def question():
+    if request.method == "POST": 
+        variableQ1 = request.form.get("Do you eat meat?")
+        variableQ2 = request.form.get("Do you use public transport?")
+        # add more vars here
+
+        fString = f'Do you eat meat? {variableQ1} Do you use public transport? {variableQ2}'
+
         response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=generate_prompt(animal),
-            temperature=0.6,
+             model="text-davinci-003",
+             prompt=generate_prompt(fString),
+             temperature=0.6,
         )
-        return redirect(url_for("index", result=response.choices[0].text))
+        
+        output = response.choices[0].text
+        
+        return render_template("index.html", output=output)
 
-    result = request.args.get("result")
-    return render_template("index.html", result=result)
+    return render_template("index.html")
 
 
-def generate_prompt(animal):
-    return """Suggest three names for an animal that is a superhero.
+if __name__ == "__main__":
+    app.run(debug=True)
 
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: {}
-Names:""".format(
-        animal.capitalize()
+
+def generate_prompt(input):
+    return """{}
+    This is the user's response and answer to these questions.
+    How would you reccomend reduce their emmissions
+    
+    """.format(
+        input.capitalize()
     )
+
+#the brackets above put the user response into the code and gpt fills the rest.
+#this is generation. 
