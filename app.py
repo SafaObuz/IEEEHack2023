@@ -8,6 +8,12 @@ from flask import Flask, redirect, render_template, request, url_for
 app = Flask(__name__)
 openai.api_key = "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"
 
+def generate_prompt(input):
+    return """{}
+    This is the user's response and answer to these questions.
+    How would you recommend reducing their emissions?
+    """.format(input.capitalize())
+
 @app.route("/")
 def index():
     output = ""
@@ -34,19 +40,5 @@ def question():
 
     return render_template("index.html")
 
-
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-def generate_prompt(input):
-    return """{}
-    This is the user's response and answer to these questions.
-    How would you reccomend reduce their emmissions
-    
-    """.format(
-        input.capitalize()
-    )
-
-#the brackets above put the user response into the code and gpt fills the rest.
-#this is generation. 
