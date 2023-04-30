@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <form action="/reduce_co2_emissions" method="post">
+      <h3>Do you eat meat?</h3>
+      <input type="text" name="Do you eat meat?" placeholder="(Y/N)" required />
+
+      <h3>Do you use public transport?</h3>
+      <input type="text" name="Do you use public transport?" placeholder="(Y/N)" required />
+
+      <input type="submit" value="Submit" />
+      <h3>What's your monthly electric bill?</h3>
+      <input type="number" name="What's your monthly electric bill?" placeholder="Enter amount" required />
+
+      <input type="submit" value="Submit" />
+      <h3>Test</h3>
+      <input type="number" name="test" placeholder="Enter amount" required />
+  </form>
+
+  {% if output %}
+    <div class="result">
+        <p>{{ output }} </p>
+    </div>
+  {% endif %}
+</body>
+</html>
