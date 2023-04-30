@@ -3,7 +3,6 @@
   <title>AI Advice for Reducing Emmissions</title>
   <link rel="shortcut icon" href="{{ url_for('static', filename='earth.png') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
-</head>
 
 <body>
   <img src="{{ url_for('static', filename='image.png') }}" class="icon" />
@@ -16,6 +15,9 @@
     <input type="text" name="Do you use public transport?" placeholder="(Y/N)" required />
 
     <input type="submit" value="Submit" />
+    <h3>What's your monthly electric bill?</h3>
+    <input type="number" name="monthly_electric_bill" placeholder="Enter amount" required />
+
   </form>
 
   {% if output %}

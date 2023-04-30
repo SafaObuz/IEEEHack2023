@@ -19,6 +19,7 @@ input {
   line-height: 24px;
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
+  background-color: #eaefea;
 }
 body {
   display: flex;

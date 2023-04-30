@@ -20,14 +20,20 @@ def question():
     if request.method == "POST": 
         variableQ1 = request.form.get("Do you eat meat?")
         variableQ2 = request.form.get("Do you use public transport?")
+        variableQ3 =request.form.get("monthly_electric_bill")
+        if variableQ1=="Y":
+           eat_meat="I eat meat"
+        else:
+            eat_meat="I dont meat"
         # add more vars here
 
-        fString = f'Do you eat meat? {variableQ1} Do you use public transport? {variableQ2}'
+        fString = f'{eat_meat} Do you use public transport? {variableQ2}. My monthly electric bill is {variableQ3}$ per month'
 
         response = openai.Completion.create(
              model="text-davinci-003",
              prompt=generate_prompt(fString),
-             temperature=0.6,
+             temperature=1,
+              max_tokens=500
         )
         
         output = response.choices[0].text
