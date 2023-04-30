@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder="../static")
 
 @app.route("/")
 def index():
@@ -19,6 +19,14 @@ def individual():
 @app.route("/business")
 def business():
     return render_template("business.html")
+
+@app.route("/slider")
+def slider():
+    return render_template("slider.html")
+
+@app.route("/co2_footprint")
+def co2_footprint():
+    return render_template("co2_footprint.html")
 
 @app.route("/reduce_co2_emissions", methods=("GET", "POST"))
 def question():
@@ -51,9 +59,9 @@ def question():
         
         output = response.choices[0].text
         
-        return render_template("index.html", output=output)
+        return render_template("individual.html", output=output)
 
-    return render_template("index.html")
+    return render_template("individual.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
