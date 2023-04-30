@@ -1,15 +1,26 @@
-import openai
+import openai, os
 from flask import Flask, redirect, render_template, request, url_for
+from dotenv import load_dotenv
+
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
-openai.api_key = "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"
 
 @app.route("/")
 def index():
     output = ""
     return render_template("index.html", output=output)
 
-@app.route("/thisIsTheNameOfRedirect", methods=("GET", "POST"))
+@app.route("/individual")
+def individual():
+    return render_template("individual.html")
+
+@app.route("/business")
+def business():
+    return render_template("business.html")
+
+@app.route("/reduce_co2_emissions", methods=("GET", "POST"))
 def question():
     if request.method == "POST": 
         form_values = request.form.items()
@@ -33,7 +44,7 @@ def question():
         response = openai.Completion.create(
              model="text-davinci-003",
              prompt=prompt,
-             temperature=0.5,
+             temperature=0,
               max_tokens=500
         )
         

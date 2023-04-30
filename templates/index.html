@@ -1,30 +1,22 @@
 <!DOCTYPE html>
+<html>
+
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>AI Advice for Reducing Emmissions</title>
   <link rel="shortcut icon" href="{{ url_for('static', filename='earth.png') }}" />
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+  <img src="{{ url_for('static', filename='earth.png') }}" class="icon" />
+
+  <h1> Take a questionaire to find out how you can reduce your CO2 Emissions </h1>
+  <h2> Powered by GPT Davinci-3</h2>
+</head>
 
 <body>
-  <img src="{{ url_for('static', filename='image.png') }}" class="icon" />
-
-  <form action="/thisIsTheNameOfRedirect" method="post">
-    <h3>Do you eat meat?</h3>
-    <input type="text" name="Do you eat meat?" placeholder="(Y/N)" required />
-
-    <h3>Do you use public transport?</h3>
-    <input type="text" name="Do you use public transport?" placeholder="(Y/N)" required />
-
-    <input type="submit" value="Submit" />
-    <h3>What's your monthly electric bill?</h3>
-    <input type="number" name="monthly_electric_bill" placeholder="Enter amount" required />
-
-  </form>
-
-  {% if output %}
-    <div class="result">
-        <p>{{ output }} </p>
-    </div>
-  {% endif %}
-
-
+<a href="{{ url_for('individual') }}" class="button">Individual Questionnaire and Report</a>
+  <a href="{{ url_for('business') }}" class="button">Business Questionaire and Report</a>
 </body>
+
+</html>
