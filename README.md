@@ -7,9 +7,13 @@ Mostly from: https://www.geeksforgeeks.org/how-to-install-pip-on-windows/#
 
 ## Method 1: Using cURL in Python
 
-### Step 1: Open the cmd terminal 
+### Step 1: 
 
-### Step 2: In python, a curl is a tool for transferring data requests to and from a server. Use the following commands to request:
+Open the cmd terminal 
+
+### Step 2: 
+
+In python, a curl is a tool for transferring data requests to and from a server. Use the following commands to request:
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
