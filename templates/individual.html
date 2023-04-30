@@ -7,6 +7,9 @@
 </head>
 <body>
   <form action="/reduce_co2_emissions" method="post">
+      <h3>How often do you travel by car, bus, train, or plane?</h3>
+      <input type="text" name="How often do you travel by car, bus, train, or plane?" placeholder="(Never, Rarely, Sometimes, Frequently, Very frequently)" required />
+      
       <h3>Do you eat meat?</h3>
       <input type="text" name="Do you eat meat?" placeholder="(Y/N)" required />
 
@@ -20,6 +23,8 @@
       <input type="submit" value="Submit" />
       <h3>Test</h3>
       <input type="number" name="test" placeholder="Enter amount" required />
+
+      
   </form>
 
   {% if output %}
