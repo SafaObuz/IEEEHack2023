@@ -8,34 +8,12 @@
 </head>
 <body>
   <form action="/reduce_co2_emissions" method="post">
-      <h3>How often do you travel by car, bus, train, or plane?</h3>
-      <input type="text" name="How often do you travel by car, bus, train, or plane?" placeholder="(Never, Rarely, Sometimes, Frequently, Very frequently)" required />
 
+  <h3>Enter any additional comments:</h3>
+  <textarea name="additional_comments" placeholder="Enter your message here"></textarea>
+        <br>
+        <button type="submit">Submit</button>
 
-      <h3>How much do you drive per week (in miles)</h3>
-      <input type="text" name="How much do you drive per week (in miles)" placeholder="Enter a number" required />
-
-      <h3>Do you use a fuel-efficient car?</h3>
-      <input type="text" name="Do you use a fuel-efficient car?" placeholder="(Y/N)" required />
-
-      <h3>Do you use or use ride-sharing services?</h3>
-      <input type="text" name="Do you use or use ride-sharing services" placeholder="(Y/N)" required />
-
-      <h3> How often do you travel long distances by plane</h3>
-      <input type="text" name="How often do you travel long distances by plane" placeholder="(Never, Rarely, Sometimes, Frequently, Very frequently)" required />
-
-
-      <h3>Do you eat meat?</h3>
-      <input type="text" name="Do you eat meat?" placeholder="(Y/N)" required />
-
-      <h3>Do you use public transport?</h3>
-      <input type="text" name="Do you use public transport?" placeholder="(Y/N)" required />
-
-      <input type="submit" value="Submit" />
-      <h3>What's your monthly electric bill?</h3>
-      <input type="number" name="What's your monthly electric bill?" placeholder="Enter amount" required />
-
-      <input type="submit" value="Submit" />
       
 
       
@@ -43,6 +21,7 @@
 
   {% if output %}
     <div class="result">
+    
         <p>{{ output }} </p>
     </div>
   {% endif %}
