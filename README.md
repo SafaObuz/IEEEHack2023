@@ -16,15 +16,23 @@ python get-pip.py
 
 ## Method 2: Manually install PIP on Windows
 
-### Step 1: Download the get-pip.py (https://bootstrap.pypa.io/get-pip.py) file and store it in the same directory as python is installed.
+### Step 1: 
 
-### Step 2: Change the current path of the directory in the command line to the path of the directory where the above file exists. 
+Download the get-pip.py (https://bootstrap.pypa.io/get-pip.py) file and store it in the same directory as python is installed.
 
-### Step 3: get-pip.py is a bootstrapping script that enables users to install pip in Python environments. Run the command given below:
+### Step 2: 
+
+Change the current path of the directory in the command line to the path of the directory where the above file exists. 
+
+### Step 3: 
+
+get-pip.py is a bootstrapping script that enables users to install pip in Python environments. Run the command given below:
 
 python get-pip.py
 
-### Step 4: Now wait through the installation process. Voila! pip is now installed on your system.
+### Step 4: 
+
+Now wait through the installation process. Voila! pip is now installed on your system.
 
 Do this command to verify the version.
 
@@ -47,11 +55,15 @@ python -m pip install -U pip
 
 Partially from: https://github.com/openai/openai-quickstart-python
 
-## 1. Run this command
+## Step 1: 
+
+Run this command
 
 git clone https://github.com/SafaObuz/IEEEHack2023.git
 
-## 2. Create a new virtual environment:
+## Step 2:
+
+Create a new virtual environment:
 
 python -m venv venv
 . venv/bin/activate
@@ -60,7 +72,9 @@ Note that this didnt work for me... I did this command.
 
 python -m venv venv/bin/activate
 
-## 3. pip the requirements
+## Step 3:
+
+pip the requirements
 
 pip install -r requirements.txt
 
@@ -70,26 +84,29 @@ pip install <name_of_library>
 
 where <name_of_library> is just the package that failed, like numpy for me.
 
-## . Get your own OpenAI key
+## Step 4:
+
+Get your own OpenAI key
 
 https://platform.openai.com/account/api-keys
 
 I am revoking my API key a couple days after the event because I don't want someone to use use and abuse my key. Replace with yours.
 
-## 5. Install flask
+## Step 5:
+
+Install flask
 
 pip install flask
 
-# FINISH
+## Step 6.
 
-## 1. Almost done!
+Almost done!
 
 Do this command in the folder. It will run a local host server which you can use the website from.
 
 flask run
 
-
-
+You should now be able to access the app at http://localhost:5000!
 
 
 
