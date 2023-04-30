@@ -25,7 +25,7 @@ def question():
         variableQ1 = request.form.get("Do you eat meat?")
         variableQ2 = request.form.get("Do you use public transport?")
         variableQ3 =request.form.get("monthly_electric_bill")
-        if variableQ1=="Y":
+        if variableQ1.lower() in ["yes", "y", "1", "true"]:
            eat_meat="I eat meat"
         else:
             eat_meat="I dont meat"
