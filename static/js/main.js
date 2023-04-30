@@ -266,6 +266,7 @@ foodWasteRange.addEventListener('input', (e) => {
       break;
   }
 });
+
 function calculateCarbonFootprint(food_waste_frequency, composting, single_use_plastics_frequency, recycling, energy_efficient_lightbulbs, programmable_thermostat, renewable_energy_sources, monthly_electricity_use, monthly_water_use, paper_products_consumption, second_hand_clothes) {
 let carbon_footprint = 0;
 
@@ -435,4 +436,4 @@ if (second_hand_clothes) {
 // Output results
 console.log("Your carbon footprint is:", carbon_footprint);
 return carbon_footprint;
-}
+});
