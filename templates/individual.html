@@ -6,23 +6,35 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
   <title></title>
 </head>
-<body>
+<body> 
+  <h3>Tell us something about yourself</h3>
+
+  <div id="infos">
+  <h3>Tell us something about yourself</h3>
+  <p>You can consider: </p>
+  <ul>
+    <li>About yourself</li>
+    <li>Do you study or Work</li>
+    <li>Do you drive your car or use public transportation?</li>
+    <li>Are you environmental aware? </li>
+  </ul>
+</div>
+
+<h3>Tell us something about yourself</h3>
+
   <form action="/reduce_co2_emissions" method="post">
 
-  <h3>Enter any additional comments:</h3>
-  <textarea name="additional_comments" placeholder="Enter your message here"></textarea>
-        <br>
-        <button type="submit">Submit</button>
+  
 
-      
+    <textarea name="additional_comments" placeholder="Enter your message here"></textarea>
+    <br>
+    <button type="submit">Submit</button>
 
-      
   </form>
 
   {% if output %}
     <div class="result">
-    
-        <p>{{ output }} </p>
+      <p>{{ output }}</p>
     </div>
   {% endif %}
 </body>

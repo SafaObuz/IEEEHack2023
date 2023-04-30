@@ -99,3 +99,8 @@ textarea {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+#infos {
+  align-items: center;
+  font-size: larger;
+  font-weight: bold;
+}
