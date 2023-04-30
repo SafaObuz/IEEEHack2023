@@ -5,11 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ title }}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css">
 
     </head>
-    <body>
-        <label for="range-slider">Select an option:</label>
-        <input type="range" id="range-slider" min="1" max="5" step="1" list="options">
+    <body class="container mx-auto">
+        <label class="block mt-4" for="range-slider">Select an option:</label>
+        <input type="range" id="range-slider" class="w-full" min="1" max="5" step="1" list="options">
         <datalist id="options">
           <option value="1">Never</option>
           <option value="2">Rarely</option>

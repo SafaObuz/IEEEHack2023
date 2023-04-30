@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AI Suggesting Carbon Footprints</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css">
+    </head>
+    <body class="bg-blue-200">
+        <h1 class="text-3xl text-center font-bold mt-8">Questionnaire to Calculate your Carbon Footprints</h1>
+        <div class="container mx-auto w-2/5 ">
+            <!--How often do you travel by car, bus, train, or plane?-->
+            
+            <div id="questionare" class="flex flex-col justify-center items-center p-8">
+                <label class="block mt-10 text-2xl" for="car-plane-train-travel">How often do you travel by car, bus, train, or plane?</label>
+                <div class="flex items-center w-full">
+                    <input type="range" id="car-plane-train-travel" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options">
+                </div>
+                <datalist id="options">
+                    <option value="1">Never</option>
+                    <option value="2">Rarely</option>
+                    <option value="3">Sometimes</option>
+                    <option value="4">Frequently</option>
+                    <option value="5">Very frequently</option>
+                </datalist>
+                <br>
+                <span id="selected-option"></span>
+                <br>
+                <!--How much do you drive per week (in miles)?-->
+
+                <label class="block mt-8 text-2xl" for="weekly-distance">How much do you drive per week (in miles)?</label>
+                <div class="flex items-center w-full">
+                    <input type="number" step="0.01" placeholder="Enter weekly driving distance in miles" id="weekly-distance" class="w-full h-full text-lg mt-4">
+                </div>
+                <!--How often do you use public transportation?-->>
+                <label class="block mt-10 text-2xl" for="public-transportation">How often do you use public transportation? </label>
+                <div class="flex items-center w-full">
+                    <input type="range" id="public-transportation" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options2">
+                </div>
+                <datalist id="options2">
+                    <option value="1">Never</option>
+                    <option value="2">Rarely</option>
+                    <option value="3">Sometimes</option>
+                    <option value="4">Frequently</option>
+                    <option value="5">Very frequently</option>
+                </datalist>
+                <br>
+                <span id="selected-option-2"></span>
+                <!--Do you use a fuel-efficient car?-->
+                <div class="flex flex-col justify-center items-center p-8">
+                    <label class="block mt-10 text-2xl mb-5" for="fuel-efficient-car">Do you use a fuel-efficient car?</label>
+                    <div class="flex items-center w-full text-center">
+                      <input type="radio" id="fuel-efficient-car-yes" name="fuel-efficient-car" value="yes">
+                      <label for="fuel-efficient-car-yes" class="mx-2 px-4 py-2 bg-green-500 text-white rounded-lg cursor-pointer hover:bg-green-600 transition">Yes</label>
+                      <input type="radio" id="fuel-efficient-car-no" name="fuel-efficient-car" value="no">
+                      <label for="fuel-efficient-car-no" class="mx-2 px-4 py-2 bg-red-500 text-white rounded-lg cursor-pointer hover:bg-red-600 transition">No</label>
+                    </div>
+                </div>
+                  <!--Do you carpool or use ride-sharing services?-->
+                <div class="flex flex-col justify-center items-center p-8">
+                    <label class="block mt-10 text-2xl mb-5" for="ride-sharing">Do you carpool or use ride-sharing services?</label>
+                    <div class="flex items-center w-full text-center items-center">
+                      <input type="radio" id="ride-sharing-yes" name="ride-sharing" value="yes">
+                      <label for="ride-sharing-yes" class="mx-2 px-4 py-2 bg-green-500 text-white rounded-lg cursor-pointer hover:bg-green-600 transition">Yes</label>
+                      <input type="radio" id="ride-sharing-no" name="ride-sharing" value="no">
+                      <label for="ride-sharing-no" class="mx-2 px-4 py-2 bg-red-500 text-white rounded-lg cursor-pointer hover:bg-red-600 transition">No</label>
+                    </div>
+                </div>
+                  <label class="block mt-10 text-2xl" for="plane-travel">How often do you travel long distances by plane?</label>
+                  <div class="flex items-center w-full">
+                      <input type="range" id="plane-travel" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options3">
+                  </div>
+                  <datalist id="options3">
+                      <option value="1">Never</option>
+                      <option value="2">Rarely</option>
+                      <option value="3">Sometimes</option>
+                      <option value="4">Frequently</option>
+                      <option value="5">Very frequently</option>
+                  </datalist>
+                  <br>
+                  <span id="selected-option3"></span>
+                  <br>
+  
+
+                  <label class="block mt-10 text-2xl" for="meat-often">How often do you eat meat?</label>
+                <div class="flex items-center w-full">
+                    <input type="range" id="meat-often" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options4">
+                </div>
+                <datalist id="options4">
+                    <option value="1">Never</option>
+                    <option value="2">Rarely</option>
+                    <option value="3">Sometimes</option>
+                    <option value="4">Frequently</option>
+                    <option value="5">Very frequently</option>
+                </datalist>
+                <br>
+                <span id="selected-option4"></span>
+                <br>
+                <label class="block mt-10 text-2xl" for="processed-foods">How often do you eat processed foods?</label>
+                <div class="flex items-center w-full">
+                  <input type="range" id="processed-foods" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options5">
+                </div>
+                <datalist id="options5">
+                  <option value="1">Never</option>
+                  <option value="2">Rarely</option>
+                  <option value="3">Sometimes</option>
+                  <option value="4">Frequently</option>
+                  <option value="5">Very frequently</option>
+                </datalist>
+                <br>
+                <span id="selected-option5"></span>
+<br>
+<label class="block mt-10 text-2xl" for="single-use-plastics">How often do you use single-use plastics?</label>
+<div class="flex items-center w-full">
+  <input type="range" id="single-use-plastics" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options6">
+</div>
+<datalist id="options6">
+  <option value="1">Never</option>
+  <option value="2">Rarely</option>
+  <option value="3">Sometimes</option>
+  <option value="4">Frequently</option>
+  <option value="5">Very frequently</option>
+</datalist>
+<br>
+<span id="selected-option6"></span>
+<br>
+
+
+<label class="block mt-10 text-2xl" for="light-bulbs">How often do you use energy-efficient light bulbs?</label>
+<div class="flex items-center w-full">
+  <input type="range" id="light-bulbs" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options7">
+</div>
+<datalist id="options7">
+  <option value="1">Never</option>
+  <option value="2">Rarely</option>
+  <option value="3">Sometimes</option>
+  <option value="4">Frequently</option>
+  <option value="5">Very frequently</option>
+</datalist>
+<br>
+<span id="selected-option7"></span>
+<br>
+<label class="block mt-10 text-2xl" for="food-waste">How often do you waste food?</label>
+
+<div class="flex items-center w-full">
+  <input type="range" id="food-waste" class="w-full h-full text-lg mt-4" min="1" max="5" step="1" list="options8">
+</div>
+<datalist id="options8">
+  <option value="1">Never</option>
+  <option value="2">Rarely</option>
+  <option value="3">Sometimes</option>
+  <option value="4">Frequently</option>
+  <option value="5">Very frequently</option>
+</datalist>
+<br>
+<span id="selected-option8"></span>
+
+                
+                <div>
+                <button id="submit-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8">Submit</button>
+            </div>
+        </div>
+        
+
+        <script src="main.js"></script>
+    </body>
+</html>
